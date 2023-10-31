@@ -14,6 +14,18 @@ const counterReducer =(state = {counter:0},action)=>{
             counter:state.counter-1
         }
     }
+    if(action.type==='INCREMENTBY2'){
+        console.log('Action : ',action.type)
+        return{
+            counter:state.counter+2
+        }
+    }
+    if(action.type==='DECREMENTBY2'){
+        console.log('Action : ',action.type)
+        return{
+            counter:state.counter-2
+        }
+    }
     return{
         counter:state.counter
     }
@@ -30,9 +42,7 @@ const counterSubs =()=>{                 // this is a function/component which i
 
 store.subscribe(counterSubs)    //code to subscrive a function or component to a store   here too we are not executing counterSubs function. we are just pointing at it
 
-store.dispatch({type:'increment'})   // 
-store.dispatch({type:'increment'})   // 
-store.dispatch({type:'increment'})   // 
-store.dispatch({type:'increment'})   // 
-store.dispatch({type:'increment'})   // 
+store.dispatch({type:'increment'})   // / 
 store.dispatch({type:'decrement'})   // 
+store.dispatch({type:'INCREMENTBY2'})   // / 
+store.dispatch({type:'DECREMENTBY2'})   // 
