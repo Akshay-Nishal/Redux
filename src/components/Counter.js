@@ -2,8 +2,8 @@ import classes from './Counter.module.css';
 import {useSelector, useDispatch} from 'react-redux'
 import { counterActions } from '../store';
 const Counter = () => {
-  const counter = useSelector(state=>state.counter)   //it automatically subscribe to redux store and always provide latest value/ If we unmount this component, it unsubscribe automatically
-  const showCounter = useSelector(state=>state.showCounter)   //it automatically subscribe to redux store and always provide latest value/ If we unmount this component, it unsubscribe automatically
+  const counter = useSelector(state=>state.counter.counter)   //it automatically subscribe to redux store and always provide latest value/ If we unmount this component, it unsubscribe automatically
+  const showCounter = useSelector(state=>state.counter.showCounter)   //it automatically subscribe to redux store and always provide latest value/ If we unmount this component, it unsubscribe automatically
   const dispatch = useDispatch()
 
   const incrementHandler =()=>{
